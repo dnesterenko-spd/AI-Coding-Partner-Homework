@@ -1,0 +1,97 @@
+### Sample API Requests for Banking Transactions API
+### Use with REST Client extension in VS Code or similar tools
+
+### Variables
+@baseUrl = http://localhost:8080
+
+### ===== TRANSACTION ENDPOINTS =====
+
+### 1. Create a new DEPOSIT transaction
+POST {{baseUrl}}/transactions
+Content-Type: application/json
+
+{
+  "toAccount": "ACC-99999",
+  "amount": 500.00,
+  "currency": "USD",
+  "type": "DEPOSIT"
+}
+
+### 2. Create a new TRANSFER transaction
+POST {{baseUrl}}/transactions
+Content-Type: application/json
+
+{
+  "fromAccount": "ACC-12345",
+  "toAccount": "ACC-67890",
+  "amount": 250.75,
+  "currency": "USD",
+  "type": "TRANSFER"
+}
+
+### 3. Create a new WITHDRAWAL transaction
+POST {{baseUrl}}/transactions
+Content-Type: application/json
+
+{
+  "fromAccount": "ACC-12345",
+  "amount": 100.00,
+  "currency": "USD",
+  "type": "WITHDRAWAL"
+}
+
+### 4. Test invalid transaction (negative amount)
+POST {{baseUrl}}/transactions
+Content-Type: application/json
+
+{
+  "fromAccount": "ACC-12345",
+  "toAccount": "ACC-67890",
+  "amount": -100.00,
+  "currency": "USD",
+  "type": "TRANSFER"
+}
+
+### 5. Test invalid currency
+POST {{baseUrl}}/transactions
+Content-Type: application/json
+
+{
+  "fromAccount": "ACC-12345",
+  "toAccount": "ACC-67890",
+  "amount": 100.00,
+  "currency": "XXX",
+  "type": "TRANSFER"
+}
+
+### 6. Get all transactions
+GET {{baseUrl}}/transactions
+
+### 7. Get transactions for specific account
+GET {{baseUrl}}/transactions?accountId=ACC-12345
+
+### 8. Get transactions by type
+GET {{baseUrl}}/transactions?type=TRANSFER
+
+### 9. Get transactions by date range
+GET {{baseUrl}}/transactions?from=2024-01-01T00:00:00&to=2024-12-31T23:59:59
+
+### 10. Get transactions with multiple filters
+GET {{baseUrl}}/transactions?accountId=ACC-12345&type=TRANSFER
+
+### 11. Get transaction by ID
+GET {{baseUrl}}/transactions/{{transactionId}}
+
+### ===== ACCOUNT ENDPOINTS =====
+
+### 12. Get account balance
+GET {{baseUrl}}/accounts/ACC-12345/balance
+
+### 13. Get account summary
+GET {{baseUrl}}/accounts/ACC-12345/summary
+
+### 14. Get another account balance
+GET {{baseUrl}}/accounts/ACC-67890/balance
+
+### 15. Get another account summary
+GET {{baseUrl}}/accounts/ACC-67890/summary
