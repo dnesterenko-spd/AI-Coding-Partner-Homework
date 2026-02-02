@@ -12,6 +12,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
+/**
+ * REST controller for transaction operations.
+ * Provides endpoints for creating, retrieving, and filtering transactions.
+ */
 @RestController
 @RequestMapping("/transactions")
 public class TransactionController {
@@ -23,8 +27,14 @@ public class TransactionController {
         this.validator = validator;
     }
 
+    /**
+     * Creates a new transaction.
+     *
+     * @param request the transaction creation request
+     * @return 201 Created with transaction details, or 400 Bad Request if validation fails
+     */
     @PostMapping
-    public ResponseEntity<?> createTransaction(@RequestBody CreateTransactionRequest request) {
+    public ResponseEntity<Object> createTransaction(@RequestBody CreateTransactionRequest request) {
         // Validate request
         ValidationErrorResponse validationError = validator.validate(request);
         if (validationError != null) {
@@ -39,8 +49,17 @@ public class TransactionController {
         }
     }
 
+    /**
+     * Retrieves all transactions with optional filters.
+     *
+     * @param accountId optional filter by account ID
+     * @param type optional filter by transaction type (DEPOSIT, WITHDRAWAL, TRANSFER)
+     * @param from optional filter by start date (ISO format)
+     * @param to optional filter by end date (ISO format)
+     * @return 200 OK with list of transactions
+     */
     @GetMapping
-    public ResponseEntity<?> getTransactions(
+    public ResponseEntity<List<TransactionResponse>> getTransactions(
             @RequestParam(required = false) String accountId,
             @RequestParam(required = false) String type,
             @RequestParam(required = false) String from,
@@ -53,8 +72,14 @@ public class TransactionController {
         }
     }
 
+    /**
+     * Retrieves a specific transaction by ID.
+     *
+     * @param id the transaction ID
+     * @return 200 OK with transaction details, or 404 Not Found
+     */
     @GetMapping("/{id}")
-    public ResponseEntity<?> getTransactionById(@PathVariable String id) {
+    public ResponseEntity<TransactionResponse> getTransactionById(@PathVariable String id) {
         TransactionResponse transaction = transactionService.getTransactionById(id);
         if (transaction == null) {
             throw new ResourceNotFoundException("Transaction not found with id: " + id);
