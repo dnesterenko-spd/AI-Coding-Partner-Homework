@@ -2,7 +2,12 @@ package com.banking.model;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.Objects;
 
+/**
+ * Domain model representing a banking transaction.
+ * Supports DEPOSIT, WITHDRAWAL, and TRANSFER operations.
+ */
 public class Transaction {
     private String id;
     private String fromAccount;
@@ -90,5 +95,32 @@ public class Transaction {
 
     public void setStatus(TransactionStatus status) {
         this.status = status;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Transaction that = (Transaction) o;
+        return Objects.equals(id, that.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
+
+    @Override
+    public String toString() {
+        return "Transaction{" +
+                "id='" + id + '\'' +
+                ", fromAccount='" + fromAccount + '\'' +
+                ", toAccount='" + toAccount + '\'' +
+                ", amount=" + amount +
+                ", currency='" + currency + '\'' +
+                ", type=" + type +
+                ", timestamp=" + timestamp +
+                ", status=" + status +
+                '}';
     }
 }

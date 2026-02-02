@@ -8,6 +8,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
 
+/**
+ * Validator for transaction creation requests.
+ * Performs validation for amounts, currencies, account formats, and transaction types.
+ */
 @Component
 public class TransactionValidator {
 
@@ -27,7 +31,9 @@ public class TransactionValidator {
             if (request.getAmount().compareTo(BigDecimal.ZERO) <= 0) {
                 errors.add(new ValidationErrorResponse.ValidationError("amount", "Amount must be a positive number"));
             }
-            if (request.getAmount().scale() > 2) {
+            // Strip trailing zeros before checking scale (handles numbers like 100.00 or 100E2)
+            BigDecimal normalizedAmount = request.getAmount().stripTrailingZeros();
+            if (normalizedAmount.scale() > 2) {
                 errors.add(new ValidationErrorResponse.ValidationError("amount", "Amount must have maximum 2 decimal places"));
             }
         }

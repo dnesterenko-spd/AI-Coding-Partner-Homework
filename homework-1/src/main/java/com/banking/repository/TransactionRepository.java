@@ -8,7 +8,13 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.*;
 import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.stream.Collectors;
 
+/**
+ * Repository for transaction data access.
+ * Uses in-memory storage with CopyOnWriteArrayList for thread safety.
+ * Initializes with sample seed data on startup.
+ */
 @Repository
 public class TransactionRepository {
     private final List<Transaction> transactions = new CopyOnWriteArrayList<>();
@@ -112,22 +118,41 @@ public class TransactionRepository {
         return new ArrayList<>(transactions);
     }
 
+    /**
+     * Finds all transactions associated with an account (as either source or destination).
+     *
+     * @param accountId the account ID to search for
+     * @return list of matching transactions
+     */
     public List<Transaction> findByAccountId(String accountId) {
         return transactions.stream()
                 .filter(t -> (t.getFromAccount() != null && t.getFromAccount().equals(accountId)) ||
                            (t.getToAccount() != null && t.getToAccount().equals(accountId)))
-                .toList();
+                .collect(Collectors.toList());
     }
 
+    /**
+     * Finds all transactions of a specific type.
+     *
+     * @param type the transaction type to filter by
+     * @return list of matching transactions
+     */
     public List<Transaction> findByType(TransactionType type) {
         return transactions.stream()
                 .filter(t -> t.getType() == type)
-                .toList();
+                .collect(Collectors.toList());
     }
 
+    /**
+     * Finds all transactions within a date range (inclusive).
+     *
+     * @param from start date/time
+     * @param to end date/time
+     * @return list of matching transactions
+     */
     public List<Transaction> findByDateRange(LocalDateTime from, LocalDateTime to) {
         return transactions.stream()
                 .filter(t -> !t.getTimestamp().isBefore(from) && !t.getTimestamp().isAfter(to))
-                .toList();
+                .collect(Collectors.toList());
     }
 }
