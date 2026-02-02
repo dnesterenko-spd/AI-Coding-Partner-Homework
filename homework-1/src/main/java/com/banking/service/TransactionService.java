@@ -14,6 +14,10 @@ import java.time.LocalDateTime;
 import java.util.*;
 import java.util.stream.Collectors;
 
+/**
+ * Service layer for banking transaction operations.
+ * Handles transaction creation, retrieval, filtering, and account balance calculations.
+ */
 @Service
 public class TransactionService {
     private final TransactionRepository repository;
@@ -22,6 +26,12 @@ public class TransactionService {
         this.repository = repository;
     }
 
+    /**
+     * Creates a new transaction with auto-generated ID and timestamp.
+     *
+     * @param request the transaction request containing account details, amount, and type
+     * @return the created transaction as a response DTO
+     */
     public TransactionResponse createTransaction(CreateTransactionRequest request) {
         Transaction transaction = new Transaction(
                 UUID.randomUUID().toString(),
@@ -91,15 +101,30 @@ public class TransactionService {
                 .collect(Collectors.toList());
     }
 
+    /**
+     * Calculates the current balance for an account.
+     * Only includes completed transactions.
+     *
+     * Note: This implementation assumes single-currency accounts.
+     * Uses the currency from the first transaction found, defaulting to USD if no transactions exist.
+     *
+     * @param accountId the account ID to calculate balance for
+     * @return the balance response containing account ID, balance amount, and currency
+     */
     public BalanceResponse getAccountBalance(String accountId) {
         List<Transaction> accountTransactions = repository.findByAccountId(accountId);
 
         BigDecimal balance = BigDecimal.ZERO;
-        String currency = "USD"; // Default currency
+        String currency = "USD"; // Default currency if no transactions
+        boolean currencySet = false;
 
         for (Transaction tx : accountTransactions) {
             if (tx.getStatus() == TransactionStatus.COMPLETED) {
-                currency = tx.getCurrency();
+                // Use currency from first transaction found (avoid currency mixing)
+                if (!currencySet) {
+                    currency = tx.getCurrency();
+                    currencySet = true;
+                }
 
                 if (tx.getType() == TransactionType.DEPOSIT ||
                     (tx.getType() == TransactionType.TRANSFER && accountId.equals(tx.getToAccount()))) {
@@ -114,6 +139,13 @@ public class TransactionService {
         return new BalanceResponse(accountId, balance, currency);
     }
 
+    /**
+     * Generates a summary of all transactions for an account.
+     * Includes total deposits, withdrawals, transaction count, and most recent transaction date.
+     *
+     * @param accountId the account ID to generate summary for
+     * @return the transaction summary response
+     */
     public TransactionSummaryResponse getAccountSummary(String accountId) {
         List<Transaction> accountTransactions = repository.findByAccountId(accountId);
 

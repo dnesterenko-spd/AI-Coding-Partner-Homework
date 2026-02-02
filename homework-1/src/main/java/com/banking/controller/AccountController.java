@@ -8,6 +8,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
+/**
+ * REST controller for account-related operations.
+ * Provides endpoints for balance and transaction summary queries.
+ */
 @RestController
 @RequestMapping("/accounts")
 public class AccountController {
@@ -17,8 +21,14 @@ public class AccountController {
         this.transactionService = transactionService;
     }
 
+    /**
+     * Retrieves the current balance for an account.
+     *
+     * @param accountId the account ID
+     * @return 200 OK with balance details
+     */
     @GetMapping("/{accountId}/balance")
-    public ResponseEntity<?> getAccountBalance(@PathVariable String accountId) {
+    public ResponseEntity<BalanceResponse> getAccountBalance(@PathVariable String accountId) {
         if (accountId == null || accountId.isBlank()) {
             throw new ResourceNotFoundException("Account ID is required");
         }
@@ -27,8 +37,14 @@ public class AccountController {
         return ResponseEntity.ok(balance);
     }
 
+    /**
+     * Retrieves transaction summary statistics for an account.
+     *
+     * @param accountId the account ID
+     * @return 200 OK with summary statistics
+     */
     @GetMapping("/{accountId}/summary")
-    public ResponseEntity<?> getAccountSummary(@PathVariable String accountId) {
+    public ResponseEntity<TransactionSummaryResponse> getAccountSummary(@PathVariable String accountId) {
         if (accountId == null || accountId.isBlank()) {
             throw new ResourceNotFoundException("Account ID is required");
         }
