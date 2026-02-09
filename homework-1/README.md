@@ -1,9 +1,11 @@
-# 🏦 Banking Transactions API
+# 🏦 Homework 1: Banking Transactions API
 
-> **Framework**: Java Spring Boot
-> **Port**: 8080
-> **AI Tools Used**: GitHub Copilot
-> **Date**: January 2026
+> **Student Name**: Dmytro Nesterenko
+> 
+> **Date Submitted**: 2026-02-02
+> 
+> **AI Tools Used**: 
+> - Claude Code, GitHub Copilot
 
 ---
 
@@ -309,8 +311,6 @@ This project was developed using **GitHub Copilot** for code generation and assi
 
 <div align="center">
 
-### ✨ A modern REST API for banking transactions, built with Java Spring Boot
-
-**Status**: ✅ Complete - All required tasks implemented + additional feature
+*This project was completed as part of the AI-Assisted Development course.*
 
 </div>
