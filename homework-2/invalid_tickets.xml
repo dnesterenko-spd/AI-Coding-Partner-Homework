@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tickets>
+  <ticket>
+    <customer_id>INVALID_XML001</customer_id>
+    <!-- Missing customer_email - required field -->
+    <customer_name>Missing Email</customer_name>
+    <subject>No email provided</subject>
+    <description>This record is missing the required customer_email field</description>
+  </ticket>
+  <ticket>
+    <customer_id></customer_id>
+    <customer_email>empty_id@example.com</customer_email>
+    <customer_name>Empty Customer ID</customer_name>
+    <subject>Customer ID is empty</subject>
+    <description>Customer ID field exists but contains empty string</description>
+  </ticket>
+  <ticket>
+    <customer_id>INVALID_XML003</customer_id>
+    <customer_email>notanemail</customer_email>
+    <customer_name>Invalid Email Format</customer_name>
+    <subject>Bad email</subject>
+    <description>Email address is invalid - missing @ symbol and domain</description>
+  </ticket>
+  <ticket>
+    <customer_id>INVALID_XML004</customer_id>
+    <customer_email>missing_subject@example.com</customer_email>
+    <customer_name>Missing Subject</customer_name>
+    <!-- subject field completely missing -->
+    <description>The subject element is not present in this ticket</description>
+  </ticket>
+  <ticket>
+    <customer_id>INVALID_XML005</customer_id>
+    <customer_email>short_desc@example.com</customer_email>
+    <customer_name>Short Description</customer_name>
+    <subject>Brief</subject>
+    <description>Short</description>
+  </ticket>
+  <ticket>
+    <customer_id>INVALID_XML006</customer_id>
+    <customer_email>long_subject@example.com</customer_email>
+    <customer_name>Long Subject User</customer_name>
+    <subject>This subject line is absolutely way too long and exceeds the maximum two hundred character limit that was set by the system design team to ensure data integrity and prevent database performance issues from storing unnecessarily verbose subject lines that provide no additional value</subject>
+    <description>Subject exceeds 200 character maximum</description>
+  </ticket>
+  <ticket>
+    <customer_id>INVALID_XML007</customer_id>
+    <customer_email>invalid_category@example.com</customer_email>
+    <customer_name>Invalid Category</customer_name>
+    <subject>Invalid category</subject>
+    <description>Using invalid category</description>
+    <category>NON_EXISTENT_CATEGORY</category>
+  </ticket>
+  <ticket>
+    <customer_id>INVALID_XML008</customer_id>
+    <customer_email>invalid_priority@example.com</customer_email>
+    <customer_name>Invalid Priority</customer_name>
+    <subject>Invalid priority</subject>
+    <description>Using invalid priority value</description>
+    <priority>CRITICAL_URGENT</priority>
+  </ticket>
+  <ticket>
+    <customer_id>INVALID_XML009</customer_id>
+    <customer_email>no_desc@example.com</customer_email>
+    <customer_name>No Description</customer_name>
+    <subject>Missing description</subject>
+    <!-- description field missing -->
+  </ticket>
+  <ticket>
+    <!-- customer_id completely missing -->
+    <customer_email>missing_id@example.com</customer_email>
+    <customer_name>Missing Customer ID</customer_name>
+    <subject>No customer ID</subject>
+    <description>The customer_id element is missing from this record</description>
+  </ticket>
+  <ticket>
+    <customer_id>INVALID_XML011</customer_id>
+    <customer_email>   </customer_email>
+    <customer_name>   </customer_name>
+    <subject>   </subject>
+    <description>   </description>
+  </ticket>
+  <ticket>
+    <customer_id>INVALID_XML012</customer_id>
+    <customer_email>duplicate@example.com</customer_email>
+    <customer_name>Duplicate One</customer_name>
+    <subject>Duplicate record</subject>
+    <description>This is a duplicate record that appears elsewhere</description>
+  </ticket>
+  <ticket>
+    <customer_id>INVALID_XML013</customer_id>
+    <customer_email>duplicate@example.com</customer_email>
+    <customer_name>Duplicate One</customer_name>
+    <subject>Duplicate record</subject>
+    <description>This is a duplicate record that appears elsewhere</description>
+  </ticket>
+  <ticket>
+    <customer_id>INVALID_XML014</customer_id>
+    <customer_email>toolong@example.com</customer_email>
+    <customer_name>Long Description User</customer_name>
+    <subject>Long description test</subject>
+    <description>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt neque porro quisquam est qui dolorem ipsum quia dolor sit amet consectetur adipisci velit sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam</description>
+  </ticket>
+  <ticket>
+    <customer_id>INVALID_XML015</customer_id>
+    <customer_email>badformat@</customer_email>
+    <customer_name>Bad Email Format</customer_name>
+    <subject>Invalid email</subject>
+    <description>Email is missing the domain extension</description>
+  </ticket>
+</tickets>

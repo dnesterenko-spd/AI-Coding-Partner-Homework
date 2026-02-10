@@ -1,0 +1,51 @@
+customer_id,customer_email,customer_name,subject,description,category,priority,status,assigned_to,source
+CUST001,alice.johnson@company.com,Alice Johnson,Can't access my account,I'm unable to login to my account. I've tried resetting my password but still cannot access the system.,ACCOUNT_ACCESS,URGENT,NEW,john.support,web
+CUST002,bob.smith@company.com,Bob Smith,Production system down,Our production environment is completely down and affecting all users. This is critical.,TECHNICAL_ISSUE,URGENT,IN_PROGRESS,sarah.engineer,api
+CUST003,carol.davis@company.com,Carol Davis,Billing discrepancy,I was charged twice for my subscription this month. Please investigate and refund the duplicate charge.,BILLING_QUESTION,HIGH,NEW,mike.billing,web
+CUST004,david.wilson@company.com,David Wilson,Feature request for dark mode,It would be nice to have a dark mode option in the application for better usability at night.,FEATURE_REQUEST,LOW,NEW,null,mobile
+CUST005,emma.brown@company.com,Emma Brown,Bug in checkout process,When I try to checkout with a discount code, the system shows an error. The error message says 'Invalid discount code' but the code is correct.,BUG_REPORT,HIGH,NEW,tom.qa,web
+CUST006,frank.miller@company.com,Frank Miller,2FA not working,I cannot login because the two-factor authentication code is not being sent to my phone.,ACCOUNT_ACCESS,URGENT,NEW,john.support,mobile
+CUST007,grace.lee@company.com,Grace Lee,Performance issues,The application is running very slow. Page loads are taking 30 seconds or more.,TECHNICAL_ISSUE,HIGH,IN_PROGRESS,null,web
+CUST008,henry.garcia@company.com,Henry Garcia,Invoice not received,I haven't received my invoice for last month's subscription. Please send it to my registered email.,BILLING_QUESTION,MEDIUM,NEW,mike.billing,email
+CUST009,iris.martinez@company.com,Iris Martinez,Suggest improvement for notifications,The notification system could be improved by allowing users to customize notification preferences for different event types.,FEATURE_REQUEST,MEDIUM,NEW,null,web
+CUST010,jack.anderson@company.com,Jack Anderson,Application crashes on startup,The application crashes immediately after launching. The error log shows 'NullPointerException in initialization'.,BUG_REPORT,URGENT,NEW,tom.qa,mobile
+CUST011,karen.taylor@company.com,Karen Taylor,Password reset link expired,The password reset link I received has expired and I cannot create a new password.,ACCOUNT_ACCESS,HIGH,NEW,john.support,email
+CUST012,leo.thomas@company.com,Leo Thomas,Database connection error,Getting persistent database connection errors when trying to save data.,TECHNICAL_ISSUE,HIGH,IN_PROGRESS,sarah.engineer,api
+CUST013,mia.jackson@company.com,Mia Jackson,Refund request,I would like to request a refund for my last purchase as I am not satisfied with the service.,BILLING_QUESTION,MEDIUM,NEW,mike.billing,web
+CUST014,nathan.white@company.com,Nathan White,Add export to Excel,Could you please add an export to Excel feature for the reports section?,FEATURE_REQUEST,MEDIUM,NEW,null,web
+CUST015,olivia.harris@company.com,Olivia Harris,Data not saving properly,When I update my profile information and click save, the changes are not persisted in the system.,BUG_REPORT,HIGH,NEW,tom.qa,web
+CUST016,paul.martin@company.com,Paul Martin,Cannot verify account,I've submitted my verification documents but the system shows 'verification pending' for over a week.,ACCOUNT_ACCESS,MEDIUM,WAITING_CUSTOMER,john.support,web
+CUST017,quinn.clark@company.com,Quinn Clark,API rate limit exceeded,We're hitting the API rate limit too quickly and need higher limits for our integration.,TECHNICAL_ISSUE,MEDIUM,IN_PROGRESS,sarah.engineer,api
+CUST018,rachel.lewis@company.com,Rachel Lewis,Subscription renewal failed,My subscription renewal failed. The payment went through but my subscription status was not updated.,BILLING_QUESTION,HIGH,NEW,mike.billing,mobile
+CUST019,sam.walker@company.com,Sam Walker,UI responsiveness on mobile,The mobile UI is not responsive on small screens and buttons are overlapping.,TECHNICAL_ISSUE,MEDIUM,NEW,null,mobile
+CUST020,tina.hall@company.com,Tina Hall,Add multi-language support,It would be great to have the application available in multiple languages.,FEATURE_REQUEST,LOW,NEW,null,web
+CUST021,ursina.allen@company.com,Ursina Allen,Security concern with API keys,I'm concerned about the security of API keys stored in local storage. Are they encrypted?,TECHNICAL_ISSUE,URGENT,IN_PROGRESS,sarah.engineer,api
+CUST022,victor.young@company.com,Victor Young,Payment method not accepted,My payment method (Visa card) is being rejected during checkout.,BILLING_QUESTION,HIGH,NEW,mike.billing,web
+CUST023,wendy.king@company.com,Wendy King,New analytics dashboard,Would be great to have a more comprehensive analytics dashboard with custom reports.,FEATURE_REQUEST,MEDIUM,NEW,null,web
+CUST024,xavier.wright@company.com,Xavier Wright,Email notifications broken,I stopped receiving email notifications. My email address is verified but no emails are coming through.,BUG_REPORT,MEDIUM,NEW,tom.qa,web
+CUST025,yolanda.lopez@company.com,Yolanda Lopez,Account locked due to failed login,My account has been locked after several failed login attempts. I need to unlock it.,ACCOUNT_ACCESS,URGENT,NEW,john.support,mobile
+CUST026,zachary.hill@company.com,Zachary Hill,Timeout error on large file upload,When uploading files larger than 50MB, I get a timeout error.,TECHNICAL_ISSUE,HIGH,IN_PROGRESS,null,web
+CUST027,amy.scott@company.com,Amy Scott,Duplicate charge reversal,I was charged twice and one charge needs to be reversed immediately.,BILLING_QUESTION,URGENT,NEW,mike.billing,email
+CUST028,brian.green@company.com,Brian Green,Suggestion for batch operations,It would be useful to have batch operations for managing multiple items at once.,FEATURE_REQUEST,LOW,NEW,null,api
+CUST029,crystal.adams@company.com,Crystal Adams,Report generation fails,The custom report generation feature crashes when trying to export large datasets.,BUG_REPORT,HIGH,NEW,tom.qa,web
+CUST030,diana.nelson@company.com,Diana Nelson,Cannot update billing address,The billing address update form keeps showing validation errors even with correct data.,BUG_REPORT,MEDIUM,NEW,tom.qa,web
+CUST031,ethan.carter@company.com,Ethan Carter,SSO integration issue,Single Sign-On with our corporate IdP is not working properly.,ACCOUNT_ACCESS,HIGH,IN_PROGRESS,john.support,api
+CUST032,fiona.mitchell@company.com,Fiona Mitchell,Import failing silently,Data import completes but no records are actually created in the system.,BUG_REPORT,HIGH,IN_PROGRESS,tom.qa,web
+CUST033,garrett.perez@company.com,Garrett Perez,API documentation missing,The API endpoints for batch operations are not documented.,TECHNICAL_ISSUE,MEDIUM,NEW,sarah.engineer,api
+CUST034,hannah.roberts@company.com,Hannah Roberts,Invoice formatting issue,Invoices are being generated but text formatting is broken with overlapping content.,BUG_REPORT,MEDIUM,NEW,tom.qa,web
+CUST035,ian.phillips@company.com,Ian Phillips,Third-party integration timeout,Our integration with the payment processor is timing out intermittently.,TECHNICAL_ISSUE,URGENT,IN_PROGRESS,sarah.engineer,api
+CUST036,julia.campbell@company.com,Julia Campbell,Workflow automation request,We need workflow automation to reduce manual data entry processes.,FEATURE_REQUEST,MEDIUM,NEW,null,web
+CUST037,kevin.parker@company.com,Kevin Parker,Session timeout too short,The session timeout is too aggressive and logs me out during active work.,TECHNICAL_ISSUE,MEDIUM,NEW,null,web
+CUST038,laura.evans@company.com,Laura Evans,Two-factor setup unclear,The setup process for two-factor authentication is confusing and not well documented.,BUG_REPORT,LOW,NEW,tom.qa,mobile
+CUST039,marcus.edwards@company.com,Marcus Edwards,Partial payment option needed,We need the ability to make partial payments on invoices instead of lump sum payments.,FEATURE_REQUEST,MEDIUM,NEW,null,billing
+CUST040,natalie.collins@company.com,Natalie Collins,Webhook delivery failed,Webhooks are not being delivered to our endpoint even though they appear to be configured correctly.,BUG_REPORT,HIGH,IN_PROGRESS,tom.qa,api
+CUST041,oscar.stewart@company.com,Oscar Stewart,Critical security patch needed,There is a critical security vulnerability in the password reset mechanism that needs immediate patching.,TECHNICAL_ISSUE,URGENT,IN_PROGRESS,sarah.engineer,web
+CUST042,patricia.sanchez@company.com,Patricia Sanchez,Audit log export needed,We need to export audit logs in CSV format for compliance purposes.,FEATURE_REQUEST,HIGH,NEW,null,web
+CUST043,quinton.morris@company.com,Quinton Morris,Cache invalidation bug,The application cache is not being invalidated properly after updates.,BUG_REPORT,HIGH,NEW,tom.qa,api
+CUST044,rachel.rogers@company.com,Rachel Rogers,Mobile app crashes on Android,The mobile app crashes on Android devices when accessing the dashboard.,BUG_REPORT,URGENT,NEW,tom.qa,mobile
+CUST045,stephen.reed@company.com,Stephen Reed,Database backup verification,We need to verify that our database backups are being created successfully.,TECHNICAL_ISSUE,MEDIUM,WAITING_CUSTOMER,sarah.engineer,api
+CUST046,tanya.cook@company.com,Tanya Cook,Multi-currency support,Please add support for multiple currencies in the billing system.,FEATURE_REQUEST,HIGH,NEW,null,web
+CUST047,underwood.morgan@company.com,Underwood Morgan,SSL certificate expiration,The SSL certificate will expire in 30 days. It needs to be renewed urgently.,TECHNICAL_ISSUE,URGENT,NEW,sarah.engineer,web
+CUST048,victoria.bell@company.com,Victoria Bell,Contact us form not working,The contact form on the website is not sending emails to our support address.,BUG_REPORT,HIGH,NEW,tom.qa,web
+CUST049,walter.gomez@company.com,Walter Gomez,Improve search functionality,The search feature should support advanced filtering and saved searches.,FEATURE_REQUEST,MEDIUM,NEW,null,web
+CUST050,xiomara.murray@company.com,Xiomara Murray,Critical production incident,Our production database is showing signs of corruption. Data integrity is at risk.,TECHNICAL_ISSUE,URGENT,IN_PROGRESS,sarah.engineer,api
