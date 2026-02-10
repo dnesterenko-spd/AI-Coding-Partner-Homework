@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tickets>
+  <ticket>
+    <customer_id>XML001</customer_id>
+    <customer_email>user1@company.com</customer_email>
+    <customer_name>User One</customer_name>
+    <subject>Account access blocked</subject>
+    <description>I cannot access my account. The system says I have exceeded login attempts. Please unblock my account immediately as I need urgent access.</description>
+    <category>ACCOUNT_ACCESS</category>
+    <priority>URGENT</priority>
+    <status>NEW</status>
+  </ticket>
+  <ticket>
+    <customer_id>XML002</customer_id>
+    <customer_email>user2@company.com</customer_email>
+    <customer_name>User Two</customer_name>
+    <subject>Production error: Service unavailable</subject>
+    <description>The production service is returning 503 Service Unavailable errors. This is affecting all users. We need immediate investigation.</description>
+    <category>TECHNICAL_ISSUE</category>
+    <priority>URGENT</priority>
+    <status>IN_PROGRESS</status>
+    <assigned_to>engineering</assigned_to>
+  </ticket>
+  <ticket>
+    <customer_id>XML003</customer_id>
+    <customer_email>user3@company.com</customer_email>
+    <customer_name>User Three</customer_name>
+    <subject>Billing not reflecting promotional discount</subject>
+    <description>I applied a promotional code during checkout but the discount was not applied to my invoice. I was charged the full price instead of the discounted amount.</description>
+    <category>BILLING_QUESTION</category>
+    <priority>HIGH</priority>
+    <status>NEW</status>
+  </ticket>
+  <ticket>
+    <customer_id>XML004</customer_id>
+    <customer_email>user4@company.com</customer_email>
+    <customer_name>User Four</customer_name>
+    <subject>Feature: Dark mode theme</subject>
+    <description>Would be nice to have a dark mode option for nighttime usage. This would reduce eye strain and improve usability in low light conditions.</description>
+    <category>FEATURE_REQUEST</category>
+    <priority>LOW</priority>
+    <status>NEW</status>
+  </ticket>
+  <ticket>
+    <customer_id>XML005</customer_id>
+    <customer_email>user5@company.com</customer_email>
+    <customer_name>User Five</customer_name>
+    <subject>Defect: Data export truncates content</subject>
+    <description>When exporting data to CSV, text with commas gets truncated. The export is not properly escaping special characters.</description>
+    <category>BUG_REPORT</category>
+    <priority>MEDIUM</priority>
+    <status>NEW</status>
+  </ticket>
+  <ticket>
+    <customer_id>XML006</customer_id>
+    <customer_email>user6@company.com</customer_email>
+    <customer_name>User Six</customer_name>
+    <subject>Two-factor authentication not working</subject>
+    <description>2FA is enabled on my account but I am not receiving the authentication codes via SMS. This is blocking my access to the system.</description>
+    <category>ACCOUNT_ACCESS</category>
+    <priority>URGENT</priority>
+    <status>NEW</status>
+  </ticket>
+  <ticket>
+    <customer_id>XML007</customer_id>
+    <customer_email>user7@company.com</customer_email>
+    <customer_name>User Seven</customer_name>
+    <subject>Performance: Slow page load times</subject>
+    <description>Dashboard is taking more than 10 seconds to load. This is affecting productivity. The issue started after the recent update.</description>
+    <category>TECHNICAL_ISSUE</category>
+    <priority>HIGH</priority>
+    <status>IN_PROGRESS</status>
+  </ticket>
+  <ticket>
+    <customer_id>XML008</customer_id>
+    <customer_email>user8@company.com</customer_email>
+    <customer_name>User Eight</customer_name>
+    <subject>Missing invoice for billing period</subject>
+    <description>I have not received the invoice for the last billing period. The invoice should have been sent on the 1st of the month. Please resend it.</description>
+    <category>BILLING_QUESTION</category>
+    <priority>MEDIUM</priority>
+    <status>NEW</status>
+  </ticket>
+  <ticket>
+    <customer_id>XML009</customer_id>
+    <customer_email>user9@company.com</customer_email>
+    <customer_name>User Nine</customer_name>
+    <subject>Feature: Batch operations</subject>
+    <description>Need ability to perform operations on multiple items at once. Currently I have to process items one by one which is very inefficient.</description>
+    <category>FEATURE_REQUEST</category>
+    <priority>MEDIUM</priority>
+    <status>NEW</status>
+  </ticket>
+  <ticket>
+    <customer_id>XML010</customer_id>
+    <customer_email>user10@company.com</customer_email>
+    <customer_name>User Ten</customer_name>
+    <subject>Defect: Report generation fails</subject>
+    <description>The custom report generation tool crashes when trying to generate reports with large datasets. Error log shows OutOfMemoryException.</description>
+    <category>BUG_REPORT</category>
+    <priority>HIGH</priority>
+    <status>NEW</status>
+  </ticket>
+  <ticket>
+    <customer_id>XML011</customer_id>
+    <customer_email>user11@company.com</customer_email>
+    <customer_name>User Eleven</customer_name>
+    <subject>Account verification stuck</subject>
+    <description>My account verification has been pending for 2 weeks. I submitted all required documents but status has not changed.</description>
+    <category>ACCOUNT_ACCESS</category>
+    <priority>MEDIUM</priority>
+    <status>WAITING_CUSTOMER</status>
+  </ticket>
+  <ticket>
+    <customer_id>XML012</customer_id>
+    <customer_email>user12@company.com</customer_email>
+    <customer_name>User Twelve</customer_name>
+    <subject>API rate limiting is too strict</subject>
+    <description>Current API rate limits are too restrictive for our high-volume application. We need higher limits or a way to request increased limits.</description>
+    <category>TECHNICAL_ISSUE</category>
+    <priority>MEDIUM</priority>
+    <status>IN_PROGRESS</status>
+  </ticket>
+  <ticket>
+    <customer_id>XML013</customer_id>
+    <customer_email>user13@company.com</customer_email>
+    <customer_name>User Thirteen</customer_name>
+    <subject>Payment failed but amount was deducted</subject>
+    <description>My payment transaction failed but the amount was still deducted from my account. I need an immediate refund.</description>
+    <category>BILLING_QUESTION</category>
+    <priority>URGENT</priority>
+    <status>NEW</status>
+  </ticket>
+  <ticket>
+    <customer_id>XML014</customer_id>
+    <customer_email>user14@company.com</customer_email>
+    <customer_name>User Fourteen</customer_name>
+    <subject>Mobile app UI responsiveness issues</subject>
+    <description>The mobile app is not responsive on small screens. Buttons and text are overlapping. The app is unusable on phones.</description>
+    <category>TECHNICAL_ISSUE</category>
+    <priority>MEDIUM</priority>
+    <status>NEW</status>
+  </ticket>
+  <ticket>
+    <customer_id>XML015</customer_id>
+    <customer_email>user15@company.com</customer_email>
+    <customer_name>User Fifteen</customer_name>
+    <subject>Feature: Multi-language support</subject>
+    <description>Would like the application to support multiple languages for international users. At minimum Spanish, French, and German.</description>
+    <category>FEATURE_REQUEST</category>
+    <priority>LOW</priority>
+    <status>NEW</status>
+  </ticket>
+  <ticket>
+    <customer_id>XML016</customer_id>
+    <customer_email>user16@company.com</customer_email>
+    <customer_name>User Sixteen</customer_name>
+    <subject>Security issue: API keys in logs</subject>
+    <description>Found API keys exposed in application logs. This is a critical security vulnerability that needs immediate remediation.</description>
+    <category>TECHNICAL_ISSUE</category>
+    <priority>URGENT</priority>
+    <status>IN_PROGRESS</status>
+  </ticket>
+  <ticket>
+    <customer_id>XML017</customer_id>
+    <customer_email>user17@company.com</customer_email>
+    <customer_name>User Seventeen</customer_name>
+    <subject>Email notifications not sending</subject>
+    <description>I have email notifications enabled but I am not receiving any emails from the system. Check if email service is configured correctly.</description>
+    <category>BUG_REPORT</category>
+    <priority>MEDIUM</priority>
+    <status>NEW</status>
+  </ticket>
+  <ticket>
+    <customer_id>XML018</customer_id>
+    <customer_email>user18@company.com</customer_email>
+    <customer_name>User Eighteen</customer_name>
+    <subject>Feature: Advanced search filters</subject>
+    <description>Current search functionality is too basic. Need advanced filters and the ability to save search queries for future use.</description>
+    <category>FEATURE_REQUEST</category>
+    <priority>MEDIUM</priority>
+    <status>NEW</status>
+  </ticket>
+  <ticket>
+    <customer_id>XML019</customer_id>
+    <customer_email>user19@company.com</customer_email>
+    <customer_name>User Nineteen</customer_name>
+    <subject>Defect: Form validation errors unclear</subject>
+    <description>Form validation error messages are confusing and do not clearly explain what is wrong. Need more descriptive error messages.</description>
+    <category>BUG_REPORT</category>
+    <priority>LOW</priority>
+    <status>NEW</status>
+  </ticket>
+  <ticket>
+    <customer_id>XML020</customer_id>
+    <customer_email>user20@company.com</customer_email>
+    <customer_name>User Twenty</customer_name>
+    <subject>Session timeout is too aggressive</subject>
+    <description>Session times out too quickly during active use. I get logged out after 15 minutes of inactivity which is too short for my workflow.</description>
+    <category>TECHNICAL_ISSUE</category>
+    <priority>MEDIUM</priority>
+    <status>NEW</status>
+  </ticket>
+  <ticket>
+    <customer_id>XML021</customer_id>
+    <customer_email>user21@company.com</customer_email>
+    <customer_name>User Twenty-One</customer_name>
+    <subject>Database backup verification needed</subject>
+    <description>Need to verify that database backups are being created and can be restored. Critical for disaster recovery planning.</description>
+    <category>TECHNICAL_ISSUE</category>
+    <priority>HIGH</priority>
+    <status>WAITING_CUSTOMER</status>
+  </ticket>
+  <ticket>
+    <customer_id>XML022</customer_id>
+    <customer_email>user22@company.com</customer_email>
+    <customer_name>User Twenty-Two</customer_name>
+    <subject>Feature: Webhook support</subject>
+    <description>Need webhook support to integrate with external systems. This would enable real-time event notifications.</description>
+    <category>FEATURE_REQUEST</category>
+    <priority>HIGH</priority>
+    <status>NEW</status>
+  </ticket>
+  <ticket>
+    <customer_id>XML023</customer_id>
+    <customer_email>user23@company.com</customer_email>
+    <customer_name>User Twenty-Three</customer_name>
+    <subject>SSL certificate expiring soon</subject>
+    <description>SSL certificate will expire in 10 days. Renewal is critical to avoid service disruption and maintain secure HTTPS connections.</description>
+    <category>TECHNICAL_ISSUE</category>
+    <priority>URGENT</priority>
+    <status>NEW</status>
+  </ticket>
+  <ticket>
+    <customer_id>XML024</customer_id>
+    <customer_email>user24@company.com</customer_email>
+    <customer_name>User Twenty-Four</customer_name>
+    <subject>Defect: Date picker not working</subject>
+    <description>The date picker component is not working in Firefox. Works fine in Chrome. Need cross-browser compatibility fix.</description>
+    <category>BUG_REPORT</category>
+    <priority>MEDIUM</priority>
+    <status>NEW</status>
+  </ticket>
+  <ticket>
+    <customer_id>XML025</customer_id>
+    <customer_email>user25@company.com</customer_email>
+    <customer_name>User Twenty-Five</customer_name>
+    <subject>Feature: Custom dashboard widgets</subject>
+    <description>Would be useful to have customizable dashboard widgets that users can arrange and configure based on their needs.</description>
+    <category>FEATURE_REQUEST</category>
+    <priority>MEDIUM</priority>
+    <status>NEW</status>
+  </ticket>
+  <ticket>
+    <customer_id>XML026</customer_id>
+    <customer_email>user26@company.com</customer_email>
+    <customer_name>User Twenty-Six</customer_name>
+    <subject>Memory leak causing server crashes</subject>
+    <description>Server keeps crashing with out of memory errors after running for a few hours. Appears to be a memory leak in the application.</description>
+    <category>TECHNICAL_ISSUE</category>
+    <priority>URGENT</priority>
+    <status>IN_PROGRESS</status>
+  </ticket>
+  <ticket>
+    <customer_id>XML027</customer_id>
+    <customer_email>user27@company.com</customer_email>
+    <customer_name>User Twenty-Seven</customer_name>
+    <subject>Duplicate order confirmation emails</subject>
+    <description>Customers receiving multiple order confirmation emails for single orders. Email queue appears to have a bug causing duplicates.</description>
+    <category>BUG_REPORT</category>
+    <priority>HIGH</priority>
+    <status>IN_PROGRESS</status>
+  </ticket>
+  <ticket>
+    <customer_id>XML028</customer_id>
+    <customer_email>user28@company.com</customer_email>
+    <customer_name>User Twenty-Eight</customer_name>
+    <subject>Feature: Audit trail for data changes</subject>
+    <description>Need comprehensive audit trail showing all data changes with timestamp and user information for compliance purposes.</description>
+    <category>FEATURE_REQUEST</category>
+    <priority>HIGH</priority>
+    <status>NEW</status>
+  </ticket>
+  <ticket>
+    <customer_id>XML029</customer_id>
+    <customer_email>user29@company.com</customer_email>
+    <customer_name>User Twenty-Nine</customer_name>
+    <subject>Connection timeout to external service</subject>
+    <description>Application fails to connect to external payment processing service. Timeout occurs after 30 seconds. Need to increase timeout or investigate service availability.</description>
+    <category>TECHNICAL_ISSUE</category>
+    <priority>URGENT</priority>
+    <status>IN_PROGRESS</status>
+  </ticket>
+  <ticket>
+    <customer_id>XML030</customer_id>
+    <customer_email>user30@company.com</customer_email>
+    <customer_name>User Thirty</customer_name>
+    <subject>Feature: Scheduled reports</subject>
+    <description>Would be useful to schedule reports to run automatically at specified times and be emailed to stakeholders.</description>
+    <category>FEATURE_REQUEST</category>
+    <priority>MEDIUM</priority>
+    <status>NEW</status>
+  </ticket>
+</tickets>
