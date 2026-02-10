@@ -1,0 +1,205 @@
+{
+  "tickets": [
+    {
+      "customer_id": "JSON001",
+      "customer_email": "support@example.com",
+      "customer_name": "Support Team",
+      "subject": "Login critical issue affecting all users",
+      "description": "Critical issue: The login system is completely down. No users can authenticate. This is affecting 100% of our user base. Production is down and needs immediate attention.",
+      "category": "ACCOUNT_ACCESS",
+      "priority": "URGENT",
+      "status": "NEW"
+    },
+    {
+      "customer_id": "JSON002",
+      "customer_email": "dev@techcorp.com",
+      "customer_name": "Tech Dev Team",
+      "subject": "API endpoint returning 500 errors",
+      "description": "The GET /api/tickets endpoint is returning HTTP 500 errors intermittently. The error logs show database connection pool exhaustion.",
+      "category": "TECHNICAL_ISSUE",
+      "priority": "URGENT",
+      "status": "IN_PROGRESS",
+      "assigned_to": "backend-team"
+    },
+    {
+      "customer_id": "JSON003",
+      "customer_email": "finance@startup.io",
+      "customer_name": "Finance Department",
+      "subject": "Invoice generation stopped working",
+      "description": "Invoices are no longer being generated for new orders. The invoice service appears to be down or misconfigured.",
+      "category": "TECHNICAL_ISSUE",
+      "priority": "HIGH",
+      "status": "NEW"
+    },
+    {
+      "customer_id": "JSON004",
+      "customer_email": "customer.service@ecommerce.com",
+      "customer_name": "Customer Service",
+      "subject": "Double charging customers on checkout",
+      "description": "Customers are reporting duplicate charges when completing checkout. This is a critical billing issue that needs immediate investigation.",
+      "category": "BILLING_QUESTION",
+      "priority": "URGENT",
+      "status": "IN_PROGRESS"
+    },
+    {
+      "customer_id": "JSON005",
+      "customer_email": "admin@company.net",
+      "customer_name": "System Administrator",
+      "subject": "Add role-based access control",
+      "description": "We need the ability to define custom roles with granular permissions for better security management.",
+      "category": "FEATURE_REQUEST",
+      "priority": "HIGH",
+      "status": "NEW"
+    },
+    {
+      "customer_id": "JSON006",
+      "customer_email": "user@localhost.com",
+      "customer_name": "John Developer",
+      "subject": "Cannot reset password",
+      "description": "The password reset flow is broken. I click reset but never receive the email link. It's been 24 hours.",
+      "category": "ACCOUNT_ACCESS",
+      "priority": "HIGH",
+      "status": "WAITING_CUSTOMER"
+    },
+    {
+      "customer_id": "JSON007",
+      "customer_email": "qa@testorg.com",
+      "customer_name": "QA Team",
+      "subject": "Defect: Search returns incorrect results",
+      "description": "Steps to reproduce: 1) Enter search term 'test' 2) Results show unrelated items 3) Results are from incorrect date range",
+      "category": "BUG_REPORT",
+      "priority": "MEDIUM",
+      "status": "NEW"
+    },
+    {
+      "customer_id": "JSON008",
+      "customer_email": "product@innovate.com",
+      "customer_name": "Product Manager",
+      "subject": "Implementation of real-time notifications",
+      "description": "Users need real-time notifications instead of polling. This would improve user experience significantly.",
+      "category": "FEATURE_REQUEST",
+      "priority": "MEDIUM",
+      "status": "NEW"
+    },
+    {
+      "customer_id": "JSON009",
+      "customer_email": "support@business.biz",
+      "customer_name": "Business Support",
+      "subject": "Scheduled maintenance window notification missing",
+      "description": "No email notification was sent before the scheduled maintenance window. Users were surprised when the system went down.",
+      "category": "BUG_REPORT",
+      "priority": "MEDIUM",
+      "status": "RESOLVED"
+    },
+    {
+      "customer_id": "JSON010",
+      "customer_email": "ops@infrastructure.cloud",
+      "customer_name": "Operations Team",
+      "subject": "Database query performance degradation",
+      "description": "Queries that used to execute in milliseconds now take seconds. Performance has degraded over the last week.",
+      "category": "TECHNICAL_ISSUE",
+      "priority": "HIGH",
+      "status": "IN_PROGRESS"
+    },
+    {
+      "customer_id": "JSON011",
+      "customer_email": "billing@enterprise.com",
+      "customer_name": "Billing Admin",
+      "subject": "Tax calculation is incorrect",
+      "description": "The tax calculation in invoices is using wrong rates. Some customers are being overcharged on taxes.",
+      "category": "BILLING_QUESTION",
+      "priority": "HIGH",
+      "status": "IN_PROGRESS"
+    },
+    {
+      "customer_id": "JSON012",
+      "customer_email": "security@corporation.net",
+      "customer_name": "Security Officer",
+      "subject": "SSL/TLS certificate renewal urgent",
+      "description": "Current SSL certificate expires in 5 days. This is critical for maintaining secure HTTPS connections.",
+      "category": "TECHNICAL_ISSUE",
+      "priority": "URGENT",
+      "status": "NEW"
+    },
+    {
+      "customer_id": "JSON013",
+      "customer_email": "ux@designstudio.io",
+      "customer_name": "UX Designer",
+      "subject": "Improve accessibility for screen readers",
+      "description": "Current UI has accessibility issues. ARIA labels are missing and keyboard navigation needs improvement.",
+      "category": "FEATURE_REQUEST",
+      "priority": "MEDIUM",
+      "status": "NEW"
+    },
+    {
+      "customer_id": "JSON014",
+      "customer_email": "data@analytics.pro",
+      "customer_name": "Data Analyst",
+      "subject": "Export reports in multiple formats",
+      "description": "We need ability to export reports as PDF, Excel, and CSV with formatting preserved.",
+      "category": "FEATURE_REQUEST",
+      "priority": "HIGH",
+      "status": "NEW"
+    },
+    {
+      "customer_id": "JSON015",
+      "customer_email": "infra@devops.team",
+      "customer_name": "DevOps Engineer",
+      "subject": "Docker image build fails",
+      "description": "Docker image build is failing during CI/CD pipeline. Build logs show dependency resolution errors.",
+      "category": "BUG_REPORT",
+      "priority": "HIGH",
+      "status": "IN_PROGRESS"
+    },
+    {
+      "customer_id": "JSON016",
+      "customer_email": "mobile@app.dev",
+      "customer_name": "Mobile Developer",
+      "subject": "iOS app crashes on iOS 14",
+      "description": "The app crashes immediately on launch when running iOS 14. Works fine on iOS 13.",
+      "category": "BUG_REPORT",
+      "priority": "URGENT",
+      "status": "NEW"
+    },
+    {
+      "customer_id": "JSON017",
+      "customer_email": "vendor@partner.com",
+      "customer_name": "Vendor Manager",
+      "subject": "Integrate with external payment gateway",
+      "description": "We need to integrate with Stripe for international payment processing.",
+      "category": "FEATURE_REQUEST",
+      "priority": "HIGH",
+      "status": "NEW"
+    },
+    {
+      "customer_id": "JSON018",
+      "customer_email": "compliance@legal.org",
+      "customer_name": "Compliance Officer",
+      "subject": "GDPR compliance audit needed",
+      "description": "We need to conduct a full audit to ensure GDPR compliance for user data handling.",
+      "category": "TECHNICAL_ISSUE",
+      "priority": "HIGH",
+      "status": "NEW"
+    },
+    {
+      "customer_id": "JSON019",
+      "customer_email": "training@academy.edu",
+      "customer_name": "Training Coordinator",
+      "subject": "API documentation is outdated",
+      "description": "The API documentation does not match current endpoints. Many examples are incorrect or deprecated.",
+      "category": "BUG_REPORT",
+      "priority": "MEDIUM",
+      "status": "NEW"
+    },
+    {
+      "customer_id": "JSON020",
+      "customer_email": "customer@regular.biz",
+      "customer_name": "Regular Customer",
+      "subject": "Request for custom theme support",
+      "description": "It would be nice to have the ability to create custom themes with company branding.",
+      "category": "FEATURE_REQUEST",
+      "priority": "LOW",
+      "status": "NEW"
+    }
+  ]
+}
