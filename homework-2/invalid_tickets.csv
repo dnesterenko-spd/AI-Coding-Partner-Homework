@@ -1,0 +1,15 @@
+customer_id,customer_email,customer_name,subject,description,category,priority
+INVALID001,,Invalid User,Missing email field,This record has no customer email which is required,ACCOUNT_ACCESS,HIGH
+INVALID002,notanemail@,Another User,Subject with no description,Missing description field which is required to be at least 10 characters,TECHNICAL_ISSUE,
+INVALID003,valid@example.com,,Missing customer name,The customer name field is empty but required,BILLING_QUESTION,MEDIUM
+INVALID004,john@example.com,John Doe,,Empty subject field,Subject is required and cannot be blank,FEATURE_REQUEST,LOW
+INVALID005,jane@example.com,Jane Smith,Short desc,Too short because minimum is 10 chars,BUG_REPORT,URGENT
+INVALID006,bob@example.com,Bob Johnson,Subject that is way too long and exceeds two hundred characters by being incredibly verbose and adding lots of unnecessary words to make sure it goes over the character limit that was set to ensure data quality and prevent database issues from storing extremely long strings,This is valid,INVALID_CATEGORY,INVALID_PRIORITY
+INVALID007,alice@example.com,Alice Williams,Valid subject,Valid description with proper length,UNKNOWN,SUPER_HIGH
+INVALID008,charlie@example.com,Charlie Brown,Duplicate record test,This is a test record with valid fields that matches another record in the system,ACCOUNT_ACCESS,MEDIUM
+INVALID009,david@example.com,David Lee,Subject exceeding limits that is absolutely way too long and keeps going on and on with meaningless text that serves no purpose other than to violate the two hundred character limit imposed by the system design and engineering team for data quality purposes and to ensure database efficiency,This description is valid,OTHER,MEDIUM
+INVALID010,malformed,email,Invalid Formatted Email,This record has malformed email addresses in multiple fields,TECHNICAL_ISSUE,HIGH
+INVALID011,test@domain.com,User Name,Valid looking subject,But this record is missing the customer_id field completely,FEATURE_REQUEST,
+INVALID012,,,,,,,
+INVALID013,user13@example.com,User Thirteen,Subject with special chars @#$%,Description contains special chars but is otherwise valid,CATEGORY_DOES_NOT_EXIST,PRIORITY_MISSING
+INVALID014,user14@example.com,User Fourteen,Valid subject,Valid description is provided here,ACCOUNT_ACCESS,URGENT
