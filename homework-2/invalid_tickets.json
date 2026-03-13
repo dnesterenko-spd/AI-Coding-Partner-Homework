@@ -1,0 +1,110 @@
+{
+  "tickets": [
+    {
+      "customer_id": "INVALID_JSON001",
+      "customer_email": "missing_name@example.com",
+      "customer_name": null,
+      "subject": "Missing customer name",
+      "description": "This record has null customer_name which is required"
+    },
+    {
+      "customer_id": "",
+      "customer_email": "empty_id@example.com",
+      "customer_name": "Empty Customer ID",
+      "subject": "Missing customer ID",
+      "description": "Customer ID is empty string which violates required field constraint"
+    },
+    {
+      "customer_id": "INVALID_JSON003",
+      "customer_email": "no_subject@example.com",
+      "customer_name": "No Subject User",
+      "description": "Missing subject field entirely"
+    },
+    {
+      "customer_id": "INVALID_JSON004",
+      "customer_email": "bad_email_format",
+      "customer_name": "Bad Email Format",
+      "subject": "Invalid email address",
+      "description": "Email address is missing @ symbol and domain extension"
+    },
+    {
+      "customer_id": "INVALID_JSON005",
+      "customer_email": "short_desc@example.com",
+      "customer_name": "Short Description",
+      "subject": "Too short",
+      "description": "Short"
+    },
+    {
+      "customer_id": "INVALID_JSON006",
+      "customer_email": "long_subject@example.com",
+      "customer_name": "Long Subject User",
+      "subject": "This subject is absolutely way too long and exceeds the two hundred character maximum limit that was carefully implemented to ensure data integrity and prevent database bloat from storing unnecessarily long subject lines that serve no purpose whatsoever",
+      "description": "Subject exceeds 200 character limit"
+    },
+    {
+      "customer_id": "INVALID_JSON007",
+      "customer_email": "invalid_category@example.com",
+      "customer_name": "Invalid Category User",
+      "subject": "Invalid category value",
+      "description": "Using category that does not exist in enum",
+      "category": "DOES_NOT_EXIST"
+    },
+    {
+      "customer_id": "INVALID_JSON008",
+      "customer_email": "invalid_priority@example.com",
+      "customer_name": "Invalid Priority User",
+      "subject": "Invalid priority value",
+      "description": "Using priority that does not exist in enum",
+      "priority": "SUPER_CRITICAL"
+    },
+    {
+      "customer_id": "INVALID_JSON009",
+      "customer_email": "no_description@example.com",
+      "customer_name": "No Description",
+      "subject": "Missing description field"
+    },
+    {
+      "customer_email": "missing_customer_id@example.com",
+      "customer_name": "Missing Customer ID",
+      "subject": "No customer ID",
+      "description": "The customer_id field is completely missing from this record"
+    },
+    {
+      "customer_id": 12345,
+      "customer_email": 67890,
+      "customer_name": ["Array", "Instead", "Of", "String"],
+      "subject": true,
+      "description": {"object": "instead of string"}
+    },
+    {
+      "customer_id": "INVALID_JSON012",
+      "customer_email": "user12@example.com",
+      "customer_name": "User Twelve",
+      "subject": null,
+      "description": null,
+      "category": null,
+      "priority": null
+    },
+    {
+      "customer_id": "INVALID_JSON013",
+      "customer_email": "space@example.com",
+      "customer_name": "   ",
+      "subject": "   ",
+      "description": "   "
+    },
+    {
+      "customer_id": "INVALID_JSON014",
+      "customer_email": "notanemail@",
+      "customer_name": "Bad Email Domain",
+      "subject": "Invalid email format",
+      "description": "Email is missing domain extension like .com"
+    },
+    {
+      "customer_id": "INVALID_JSON015",
+      "customer_email": "duplicate@example.com",
+      "customer_name": "Duplicate Record",
+      "subject": "This is a duplicate of another record",
+      "description": "Duplicate records should be detected during import validation process"
+    }
+  ]
+}
