@@ -11,7 +11,8 @@
     "prepush": "npm run test:coverage:check",
     "validator": "ts-node agents/transaction_validator.ts",
     "fraud-detector": "ts-node agents/fraud_detector.ts",
-    "reporter": "ts-node agents/reporting_agent.ts"
+    "reporter": "ts-node agents/reporting_agent.ts",
+    "mcp": "ts-node mcp/server.ts"
   },
   "keywords": [
     "banking",
@@ -23,7 +24,8 @@
   "license": "MIT",
   "dependencies": {
     "decimal.js": "^10.4.3",
-    "uuid": "^9.0.0"
+    "uuid": "^9.0.0",
+    "zod": "^4.3.6"
   },
   "devDependencies": {
     "@types/jest": "^29.5.0",
@@ -32,6 +34,7 @@
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
     "eslint": "^8.0.0",
+    "fastmcp": "^3.34.0",
     "jest": "^29.5.0",
     "ts-jest": "^29.1.0",
     "ts-node": "^10.9.1",
