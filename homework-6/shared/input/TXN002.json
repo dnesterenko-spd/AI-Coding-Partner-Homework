@@ -1,0 +1,21 @@
+{
+  "message_id": "67589871-ee26-4731-a92f-1e2523c78148",
+  "timestamp": "2026-03-22T06:34:47.078Z",
+  "source_agent": "orchestrator",
+  "target_agent": "transaction_validator",
+  "message_type": "transaction",
+  "data": {
+    "transaction_id": "TXN002",
+    "timestamp": "2026-03-16T09:15:00Z",
+    "source_account": "ACC-1002",
+    "destination_account": "ACC-3001",
+    "amount": "25000.00",
+    "currency": "USD",
+    "transaction_type": "wire_transfer",
+    "description": "Equipment purchase",
+    "metadata": {
+      "channel": "branch",
+      "country": "US"
+    }
+  }
+}

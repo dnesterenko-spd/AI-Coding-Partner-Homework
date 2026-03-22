@@ -1,0 +1,21 @@
+{
+  "message_id": "49322105-6398-4af4-b720-4a8dee7d652d",
+  "timestamp": "2026-03-22T06:34:47.079Z",
+  "source_agent": "orchestrator",
+  "target_agent": "transaction_validator",
+  "message_type": "transaction",
+  "data": {
+    "transaction_id": "TXN005",
+    "timestamp": "2026-03-16T10:00:00Z",
+    "source_account": "ACC-1005",
+    "destination_account": "ACC-6600",
+    "amount": "75000.00",
+    "currency": "USD",
+    "transaction_type": "wire_transfer",
+    "description": "Property settlement",
+    "metadata": {
+      "channel": "branch",
+      "country": "US"
+    }
+  }
+}

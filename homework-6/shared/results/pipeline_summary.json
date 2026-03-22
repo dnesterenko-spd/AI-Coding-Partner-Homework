@@ -1,0 +1,16 @@
+{
+  "total_transactions": 8,
+  "accepted_count": 6,
+  "rejected_count": 2,
+  "rejection_breakdown": {
+    "INVALID_CURRENCY": 1,
+    "NEGATIVE_AMOUNT": 1
+  },
+  "risk_distribution": {
+    "LOW": 3,
+    "MEDIUM": 2,
+    "HIGH": 1,
+    "N/A": 2
+  },
+  "generated_at": "2026-03-22T06:34:47.102Z"
+}
