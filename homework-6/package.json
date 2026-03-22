@@ -7,6 +7,8 @@
     "pipeline": "ts-node pipeline.ts",
     "test": "jest",
     "test:coverage": "jest --coverage",
+    "test:coverage:check": "jest --coverage --coverageThreshold='{\"global\":{\"branches\":80,\"functions\":80,\"lines\":80,\"statements\":80}}'",
+    "prepush": "npm run test:coverage:check",
     "validator": "ts-node agents/transaction_validator.ts",
     "fraud-detector": "ts-node agents/fraud_detector.ts",
     "reporter": "ts-node agents/reporting_agent.ts"
