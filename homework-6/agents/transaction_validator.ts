@@ -107,6 +107,7 @@ export async function runValidator(): Promise<void> {
 }
 
 // Run if called directly
+/* istanbul ignore if */
 if (require.main === module) {
   runValidator();
 }

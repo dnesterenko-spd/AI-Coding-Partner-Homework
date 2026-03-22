@@ -116,4 +116,56 @@ describe('Transaction Validator', () => {
     // Note: the actual implementation converts to uppercase, so this should validate
     expect(result.status).toBe('validated');
   });
+
+  test('should reject when transaction_id is undefined', () => {
+    const transaction: any = { ...validTransaction };
+    delete transaction.transaction_id;
+    const result = processMessage(transaction);
+    expect(result.status).toBe('rejected');
+    expect(result.rejection_reason).toBe('MISSING_FIELD');
+  });
+
+  test('should reject when amount is undefined', () => {
+    const transaction: any = { ...validTransaction };
+    delete transaction.amount;
+    const result = processMessage(transaction);
+    expect(result.status).toBe('rejected');
+    expect(result.rejection_reason).toBe('MISSING_FIELD');
+  });
+
+  test('should reject when currency is undefined', () => {
+    const transaction: any = { ...validTransaction };
+    delete transaction.currency;
+    const result = processMessage(transaction);
+    expect(result.status).toBe('rejected');
+    expect(result.rejection_reason).toBe('MISSING_FIELD');
+  });
+
+  test('should reject when source_account is undefined', () => {
+    const transaction: any = { ...validTransaction };
+    delete transaction.source_account;
+    const result = processMessage(transaction);
+    expect(result.status).toBe('rejected');
+    expect(result.rejection_reason).toBe('MISSING_FIELD');
+  });
+
+  test('should reject when destination_account is undefined', () => {
+    const transaction: any = { ...validTransaction };
+    delete transaction.destination_account;
+    const result = processMessage(transaction);
+    expect(result.status).toBe('rejected');
+    expect(result.rejection_reason).toBe('MISSING_FIELD');
+  });
+
+  test('should validate lowercase currency', () => {
+    const transaction = { ...validTransaction, currency: 'eur' };
+    const result = processMessage(transaction);
+    expect(result.status).toBe('validated');
+  });
+
+  test('should validate mixed case currency', () => {
+    const transaction = { ...validTransaction, currency: 'GbP' };
+    const result = processMessage(transaction);
+    expect(result.status).toBe('validated');
+  });
 });

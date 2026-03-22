@@ -188,4 +188,59 @@ describe('Fraud Detector', () => {
     const result = processMessage(message);
     expect(result.fraud_risk_score).toBeLessThanOrEqual(10);
   });
+
+  test('should handle edge case at exactly $10,000', () => {
+    const transaction = {
+      ...baseValidTransaction,
+      amount: '10000.00',
+    };
+    const message = createMessage(transaction);
+    const result = processMessage(message);
+    expect(result.fraud_risk_score).toBe(0);
+    expect(result.fraud_risk_level).toBe('LOW');
+  });
+
+  test('should handle edge case at exactly $50,000', () => {
+    const transaction = {
+      ...baseValidTransaction,
+      amount: '50000.00',
+    };
+    const message = createMessage(transaction);
+    const result = processMessage(message);
+    expect(result.fraud_risk_score).toBe(3);
+    expect(result.fraud_risk_level).toBe('MEDIUM');
+  });
+
+  test('should not add points for hour at boundary 05:00 UTC', () => {
+    const transaction = {
+      ...baseValidTransaction,
+      timestamp: '2026-03-16T05:00:00Z',
+      amount: '100.00',
+    };
+    const message = createMessage(transaction);
+    const result = processMessage(message);
+    expect(result.fraud_risk_score).toBe(0);
+  });
+
+  test('should add points for hour at boundary 04:59 UTC', () => {
+    const transaction = {
+      ...baseValidTransaction,
+      timestamp: '2026-03-16T04:59:00Z',
+      amount: '100.00',
+    };
+    const message = createMessage(transaction);
+    const result = processMessage(message);
+    expect(result.fraud_risk_score).toBe(2);
+  });
+
+  test('should not add points for hour at boundary 01:59 UTC', () => {
+    const transaction = {
+      ...baseValidTransaction,
+      timestamp: '2026-03-16T01:59:00Z',
+      amount: '100.00',
+    };
+    const message = createMessage(transaction);
+    const result = processMessage(message);
+    expect(result.fraud_risk_score).toBe(0);
+  });
 });

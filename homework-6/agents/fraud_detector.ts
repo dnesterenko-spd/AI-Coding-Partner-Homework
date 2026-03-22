@@ -122,6 +122,7 @@ export async function runFraudDetector(): Promise<void> {
 }
 
 // Run if called directly
+/* istanbul ignore if */
 if (require.main === module) {
   runFraudDetector();
 }

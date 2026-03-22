@@ -124,4 +124,28 @@ describe('Reporting Agent', () => {
     const timestamp = new Date(result.processed_at);
     expect(timestamp.getTime()).toBeGreaterThan(0);
   });
+
+  test('should handle rejected transaction without rejection_reason', () => {
+    const transaction: ScoredResult = {
+      ...baseTransaction,
+      status: 'rejected',
+      fraud_risk_level: 'N/A',
+    };
+    const message = createMessage(transaction);
+    const result = processMessage(message);
+    expect(result.status).toBe('rejected');
+    expect(result.processed_at).toBeDefined();
+  });
+
+  test('should handle MEDIUM risk level', () => {
+    const transaction: ScoredResult = {
+      ...baseTransaction,
+      fraud_risk_score: 5,
+      fraud_risk_level: 'MEDIUM',
+    };
+    const message = createMessage(transaction);
+    const result = processMessage(message);
+    expect(result.fraud_risk_level).toBe('MEDIUM');
+    expect(result.fraud_risk_score).toBe(5);
+  });
 });
