@@ -70,11 +70,11 @@ homework-5/
 ├── README.md (this file)
 ├── TASKS.md (assignment requirements)
 ├── .mcp.json (MCP server configuration)
-├── HOWTORUN.md (to be created - detailed run instructions)
-├── custom-mcp-server/ (to be created for Task 4)
-│   ├── server.py
-│   ├── lorem-ipsum.md
-│   └── requirements.txt
+├── HOWTORUN.md (detailed run instructions)
+├── custom-mcp-server/
+│   ├── server.py (FastMCP server implementation)
+│   ├── lorem-ipsum.md (source text file)
+│   └── requirements.txt (Python dependencies)
 └── docs/
     └── screenshots/
         ├── github-mcp-result.png (to be added)
@@ -83,12 +83,62 @@ homework-5/
         └── custom-mcp-result.png (to be added)
 ```
 
+## Task 4: Custom MCP Server with FastMCP
+
+### Overview
+
+Built a custom MCP server using FastMCP that provides:
+- **Resource**: `lorem://text` - A URI that Claude can read from
+- **Tool**: `read` - An action Claude can call to retrieve text
+
+### Implementation
+
+The custom server is located in `custom-mcp-server/` and includes:
+
+1. **server.py**: FastMCP server implementation with:
+   - `@mcp.resource("lorem://text")` decorator for the resource
+   - `@mcp.tool()` decorator for the read tool
+   - Both accept optional `word_count` parameter (default: 30)
+
+2. **lorem-ipsum.md**: Source text file containing Lorem Ipsum content
+
+3. **requirements.txt**: Python dependencies (fastmcp)
+
+### Key Concepts
+
+- **Resources**: Passive URIs that provide data (like files or API endpoints)
+  - Example: `lorem://text` returns text from lorem-ipsum.md
+  - Claude can read from resources but doesn't "call" them
+
+- **Tools**: Active functions that Claude can invoke
+  - Example: `read(word_count=50)` is a function call
+  - Claude explicitly calls tools to perform operations
+
+### Configuration
+
+Added to `.mcp.json`:
+```json
+"lorem-ipsum": {
+  "command": "python3",
+  "args": [
+    "/Users/dima/Work/Projects/AI-Coding-Partner-Homework/homework-5/custom-mcp-server/server.py"
+  ]
+}
+```
+
+### Usage
+
+After restarting Claude Code with `/mcp`:
+- "Use the read tool to get 50 words from lorem ipsum"
+- "Call the read tool with word_count=20"
+- "Read the lorem://text resource"
+
 ## Tasks Progress
 
 - [x] Task 1: GitHub MCP Server - Configuration created
-- [ ] Task 2: Filesystem MCP Server
-- [ ] Task 3: Jira MCP Server
-- [ ] Task 4: Custom MCP Server with FastMCP
+- [x] Task 2: Filesystem MCP Server - Configuration created
+- [ ] Task 3: Jira MCP Server - Needs community package (see HOWTORUN.md)
+- [x] Task 4: Custom MCP Server with FastMCP - Complete
 
 ## Notes
 

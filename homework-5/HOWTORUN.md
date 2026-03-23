@@ -66,59 +66,177 @@ Try these commands in Claude Code:
    - "List files in the configured directory"
    - "Read the content of [filename]"
 
-## Task 3: Jira MCP Server (To be configured)
+## Task 3: Jira MCP Server
+
+### ⚠️ Important Note
+
+The package `@modelcontextprotocol/server-atlassian` **does not exist** in the npm registry. You need to use a community-built Jira MCP server instead.
+
+### Recommended Alternatives
+
+1. **`@rui.branco/jira-mcp`** (v1.6.12) - Specifically designed for Claude Code
+2. **`@guhcostan/jira-mcp`** (v2.5.0) - Comprehensive with 36 tools
+3. **`jira-mcp`** by camdenclark - Simple and reliable
 
 ### Installation and Configuration
 
 1. **Generate Jira API Token**:
    - Go to: https://id.atlassian.com/manage-profile/security/api-tokens
-   - Create new API token
+   - Click "Create API token"
+   - Give it a name and copy the token
 
-2. **Add to .mcp.json**:
+2. **Set Environment Variables**:
+   ```bash
+   export ATLASSIAN_URL="https://your-domain.atlassian.net"
+   export ATLASSIAN_EMAIL="your-email@example.com"
+   export ATLASSIAN_API_TOKEN="your-api-token-here"
+   ```
+
+   Add to your shell profile for persistence:
+   ```bash
+   echo 'export ATLASSIAN_URL="https://your-domain.atlassian.net"' >> ~/.zshrc
+   echo 'export ATLASSIAN_EMAIL="your-email@example.com"' >> ~/.zshrc
+   echo 'export ATLASSIAN_API_TOKEN="your-api-token"' >> ~/.zshrc
+   source ~/.zshrc
+   ```
+
+3. **Update .mcp.json** with a working package (example using @rui.branco/jira-mcp):
    ```json
    "jira": {
      "command": "npx",
      "args": [
        "-y",
-       "@modelcontextprotocol/server-jira@latest"
+       "@rui.branco/jira-mcp@latest"
      ],
      "env": {
-       "JIRA_URL": "https://your-domain.atlassian.net",
-       "JIRA_EMAIL": "your-email@example.com",
-       "JIRA_API_TOKEN": "your-api-token"
+       "ATLASSIAN_URL": "${ATLASSIAN_URL}",
+       "ATLASSIAN_EMAIL": "${ATLASSIAN_EMAIL}",
+       "ATLASSIAN_API_TOKEN": "${ATLASSIAN_API_TOKEN}"
      }
    }
    ```
 
-3. **Test with**:
-   - "Give me the Jira tickets of the last 5 bugs on [project-name]"
+4. **Restart Claude Code**:
+   ```
+   /mcp
+   ```
 
-## Task 4: Custom MCP Server (To be implemented)
+### Testing Jira MCP
+
+Try these commands:
+```
+- "Give me the Jira tickets of the last 5 bugs on project XYZ"
+- "Show me all open issues assigned to me"
+- "List issues in the current sprint"
+- "Get details for ticket ABC-123"
+```
+
+### Environment Variables Reference
+
+The Jira MCP server requires these three variables:
+- **ATLASSIAN_URL**: Base URL of your Atlassian instance (e.g., `https://yourcompany.atlassian.net`)
+- **ATLASSIAN_EMAIL**: Your email used to log into Jira
+- **ATLASSIAN_API_TOKEN**: API token generated from Atlassian security settings
+
+## Task 4: Custom MCP Server with FastMCP ✅
+
+### What You'll Build
+
+A custom MCP server that provides:
+- **Resource**: `lorem://text` - A URI Claude can read from
+- **Tool**: `read` - An action Claude can call with optional `word_count` parameter
+
+**Key Concepts**:
+- **Resources** are passive data sources (like files or APIs) that Claude can read
+- **Tools** are active functions that Claude can invoke to perform operations
 
 ### Installation
 
-1. **Install Dependencies**:
+1. **Install Python Dependencies**:
    ```bash
    cd custom-mcp-server
-   pip install -r requirements.txt
+   pip3 install -r requirements.txt
    ```
 
-2. **Configure in .mcp.json**:
-   ```json
-   "custom-lorem": {
-     "command": "python",
-     "args": ["custom-mcp-server/server.py"]
-   }
-   ```
-
-3. **Run the Server**:
+   Or install fastmcp directly:
    ```bash
-   python custom-mcp-server/server.py
+   pip3 install fastmcp
    ```
 
-4. **Test the Tool**:
+2. **Verify Installation**:
+   ```bash
+   python3 -c "import fastmcp; print('FastMCP installed successfully!')"
+   ```
+
+### Configuration
+
+The server is already configured in `.mcp.json`:
+```json
+"lorem-ipsum": {
+  "command": "python3",
+  "args": [
+    "/Users/dima/Work/Projects/AI-Coding-Partner-Homework/homework-5/custom-mcp-server/server.py"
+  ]
+}
+```
+
+### How It Works
+
+The `server.py` file implements:
+
+1. **Resource** (`lorem://text`):
+   - Reads from `lorem-ipsum.md`
+   - Accepts `word_count` parameter (default: 30)
+   - Returns exactly that many words
+
+2. **Tool** (`read`):
+   - Takes optional `word_count` parameter
+   - Returns word-limited content from the resource
+   - Can be invoked directly by Claude
+
+### Testing Manually
+
+Test the server directly (it will wait for MCP protocol messages):
+```bash
+python3 custom-mcp-server/server.py
+```
+
+Press Ctrl+C to stop.
+
+### Usage in Claude Code
+
+After restarting Claude Code with `/mcp`, test with:
+
+1. **Test the read tool**:
+   ```
    - "Use the read tool to get 50 words from lorem ipsum"
-   - "Read 10 words from the lorem resource"
+   - "Call the read tool with word_count=20"
+   - "Use the lorem-ipsum server's read tool with 100 words"
+   ```
+
+2. **Test the resource**:
+   ```
+   - "Read the lorem://text resource"
+   - "Read lorem://text with 40 words"
+   ```
+
+### Verification Checklist
+
+- ✅ `fastmcp` is listed in `requirements.txt`
+- ✅ `server.py` implements both Resource and Tool
+- ✅ `lorem-ipsum.md` contains source text (180+ words)
+- ✅ `.mcp.json` has correct absolute path to `server.py`
+- ✅ Server runs without errors: `python3 custom-mcp-server/server.py`
+- ✅ MCP client detects the server after restart
+
+### File Structure
+
+```
+custom-mcp-server/
+├── server.py           # FastMCP server implementation
+├── lorem-ipsum.md      # Source text file
+└── requirements.txt    # Python dependencies (fastmcp)
+```
 
 ## Troubleshooting
 
