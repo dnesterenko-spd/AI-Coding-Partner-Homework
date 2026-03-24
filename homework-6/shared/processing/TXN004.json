@@ -1,0 +1,24 @@
+{
+  "message_id": "5e84ae55-e5bf-46d2-bd04-1e749503f675",
+  "timestamp": "2026-03-22T06:34:47.089Z",
+  "source_agent": "fraud_detector",
+  "target_agent": "reporting_agent",
+  "message_type": "transaction",
+  "data": {
+    "transaction_id": "TXN004",
+    "timestamp": "2026-03-16T02:47:00Z",
+    "source_account": "ACC-1004",
+    "destination_account": "ACC-5500",
+    "amount": "500.00",
+    "currency": "EUR",
+    "transaction_type": "transfer",
+    "description": "Invoice #4471",
+    "metadata": {
+      "channel": "api",
+      "country": "DE"
+    },
+    "status": "validated",
+    "fraud_risk_score": 3,
+    "fraud_risk_level": "MEDIUM"
+  }
+}
